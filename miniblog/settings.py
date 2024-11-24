@@ -2,6 +2,7 @@ from pathlib import Path
 import os
 from decouple import config
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -58,7 +59,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'miniblog.wsgi.application'
 
-# Database setup for PostgreSQL (Railway)
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
