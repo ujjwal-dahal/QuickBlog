@@ -1,0 +1,61 @@
+{% extends "blog/layout.html" %}
+{% load static %}
+{% block title %}Contact Us | QuickBlog{% endblock %}
+
+{% block content %}
+
+<div class="col-sm-10 mx-auto mt-5" >
+    <h1 class="text-white">Contact Us Page</h1>
+    {% if messages %}
+    {% for message in messages  %}
+    {% if message.tags == "error" %}
+    <div class="alert alert-danger">
+      {{message}}
+      <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% else %}
+    <div class="alert alert-{{message.tags}}">
+      {{message}}
+      <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+        <div class="mb-3">
+            <label for="fname" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="fname" name="fname">
+          </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" name="email">
+          <div id="email" class="form-text text-white">We'll never share your email with anyone else.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="number" class="form-label">Phone Number</label>
+          <input type="number" class="form-control" id="number" name="number">
+          <div id="numbr" class="form-text text-white">We'll never share your phone number with anyone else.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address" class="form-label">Address</label>
+          <input type="text" class="form-control" id="address" name="address">
+        </div>
+
+        <div class="mb-3">
+            <label for="text-area" class="form-label">Message</label>
+            <textarea class="form-control" id="text-area" rows="3" name="message"></textarea>
+          </div>
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+  </div>
+  
+  
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "blog/layout.html" %}
+{% load static %}
+{% block title %}Add Post{% endblock %}
+
+{% block content %}
+
+<div class="col-sm-10 mx-auto mt-5" >
+    <h1 class="text-white">Add Post</h1>
+    {% if messages %}
+    {% for message in messages  %}
+    <div class="alert alert-danger">
+      {{message}}
+      <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title">
+          </div>
+   
+        <div class="mb-3">
+            <label for="text-area" class="form-label">Description</label>
+            <textarea class="form-control" id="text-area" rows="5" name="desc"></textarea>
+          </div>
+       
+          <button type="submit" class="btn btn-success">Add</button>
+        <a href="{% url "dashboard" %}"><span type="submit" class="btn btn-danger">Cancel</span></a>
+      </form>
+  </div>
+  
+  
+
+{% endblock %}

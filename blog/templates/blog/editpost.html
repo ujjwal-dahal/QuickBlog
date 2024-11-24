@@ -1,0 +1,38 @@
+{% extends "blog/layout.html" %}
+{% load static %}
+{% block title %}Edit Post{% endblock %}
+
+{% block content %}
+
+<div class="col-sm-10 mx-auto mt-5">
+    <h1 class="text-white">Edit Post</h1>
+
+    {% if messages %}
+    {% for message in messages  %}
+    <div class="alert alert-success">
+        {{message}}
+        <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" value="{{post.title}}">
+        </div>
+
+        <div class="mb-3">
+            <label for="text-area" class="form-label">Description</label>
+            <textarea class="form-control" id="text-area" rows="5" name="desc">{{post.description}}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success">Edit</button>
+        <a href="{% url "dashboard" %}"><span type="submit" class="btn btn-danger">Cancel</span></a>
+    </form>
+</div>
+
+{% endblock %}

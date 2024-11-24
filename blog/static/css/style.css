@@ -1,0 +1,45 @@
+body{
+    background-color: rgb(2, 2, 29);
+    color:white;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.nav-width{
+    height: 80px;
+}
+
+.card-height{
+    width: 60vw;
+    margin-top: 70px;
+}
+
+.nav-link{
+    margin-left: 10px;
+}
+
+.card-text{
+    text-align: center;
+}
+
+h1{
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.nav-title{
+    font-family: "Macondo", cursive;
+}
+
+.register-btn{
+margin-top: 10px;
+}
+
+.loggout-text{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.current_link{
+    color:yellow;
+}
+

@@ -1,0 +1,18 @@
+{% extends "blog/layout.html" %}
+{% load static %}
+{% block title %}Logout{% endblock %}
+
+{% block content %}
+
+<div class="col-sm-10 mx-auto mt-5" >
+    <h1 class="text-white">Logout Page</h1>
+    <h6 class="loggout-text">Are You Sure Want to Logout ??</h6>
+    <form action="" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Logout" class="btn btn-danger register-btn">
+    </form>
+  </div>
+  
+  
+
+{% endblock %}
