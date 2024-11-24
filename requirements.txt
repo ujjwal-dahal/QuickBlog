@@ -2,7 +2,7 @@ asgiref==3.8.1
 django==5.1.1
 djangorestframework==3.15.2
 pillow==10.4.0
-pymysql==1.1.1
+psycopg2==2.9.10
 python-decouple==3.8
 python-dotenv==1.0.1
 six==1.16.0
